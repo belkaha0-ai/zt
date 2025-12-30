@@ -1,0 +1,22 @@
+/* Styles spécifiques au portfolio et store */
+body { scroll-behavior: smooth; padding-top: 3.25rem; }
+.hero { background-image: linear-gradient(120deg, rgba(63,94,251,0.9), rgba(252,70,107,0.9)); color: #fff; }
+.card img { object-fit: cover; }
+.is-hidden { display: none; }
+
+/* Product image helper for store */
+.product-image {
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Cart & store helpers */
+.cart-item {
+  border-bottom: 1px solid #eee;
+  padding: 0.5rem 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero .image { display: none; }
+}

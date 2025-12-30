@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini Market — Aziz Belkahla</title>
+
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles_Version3.css">
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <nav class="level">
+        <div class="level-left">
+          <div class="level-item">
+            <a href="index_Version3.html" class="title is-4">← Retour au portfolio — Aziz Belkahla</a>
+          </div>
+        </div>
+        <div class="level-right">
+          <div class="level-item">
+            <button id="cart-button" class="button is-primary">
+              <span class="icon"><i class="fa fa-shopping-cart"></i></span>
+              <span>Panier</span>
+              <span id="cart-count" class="tag is-danger ml-2">0</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <div id="products" class="columns is-multiline">
+        <!-- Products injected by app.js -->
+      </div>
+
+      <hr>
+
+      <h2 class="title is-5">Checkout</h2>
+      <form id="checkout-form" class="box" novalidate>
+        <div class="columns">
+          <div class="column">
+            <div class="field">
+              <label class="label">Nom complet</label>
+              <div class="control">
+                <input id="name" class="input" type="text" placeholder="Aziz Belkahla" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input id="email" class="input" type="email" placeholder="belkaha0@gmail.com" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Adresse</label>
+              <div class="control">
+                <input id="address" class="input" type="text" placeholder="Adresse de livraison" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="field">
+              <label class="label">Méthode de paiement</label>
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select id="payment">
+                    <option>Carte</option>
+                    <option>PayPal</option>
+                    <option>À la livraison</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Total du panier</label>
+              <div class="control">
+                <input id="cart-total" class="input is-static" type="text" readonly value="0 €">
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <button id="place-order" class="button is-success">Passer la commande</button>
+              </div>
+            </div>
+
+            <div id="checkout-message" class="notification is-hidden"></div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Cart modal -->
+  <div id="cart-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card" style="width: 80%;">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Votre panier</p>
+        <button id="close-cart" class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div id="cart-items">
+          <!-- Cart items injected by app.js -->
+        </div>
+      </section>
+      <footer class="modal-card-foot">
+        <div class="content is-fullwidth">
+          <strong>Total: <span id="modal-total">0 €</span></strong>
+        </div>
+        <button id="checkout-from-cart" class="button is-primary ml-auto">Aller au checkout</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="scripts_Version2.js"></script>
+</body>
+</html>
